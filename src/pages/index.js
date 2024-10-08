@@ -1,11 +1,13 @@
 
+import Card from '@/components/layouts/Home/Card'
 import CarouselComponent from '@/components/layouts/Home/Carousel'
 import React from 'react'
 export default function Home() {
   return (
     <div className='w-screen h-screen bg-gray-100 dark:bg-gray-900 dark:text-gray-100 text-black'>
       <CarouselComponent></CarouselComponent>
-      Home</div>
+      <Card></Card>
+    </div>
   )
 }
 
