@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+import lightmodeicon from "../../Assets/dark-mode-icon.jpg";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,12 +55,17 @@ export default function Navbar() {
           >
             Signup
           </Link>
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          {/* <button
+            
             className="inline-flex items-center border-[#001429] border-2 text-md font-semibold rounded-full bg-white"
           >
             ⚫
-          </button>
+          </button> */}
+          <Image
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="h-8 w-8 inline-flex items-center text-md font-semibold rounded-full bg-white"
+            src={lightmodeicon}
+          ></Image>
         </div>
 
         {/* Mobile Menu Button */}

@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import loginbg from "../../Assets/4490229.jpg";
 
 function Login() {
   const router = useRouter();
@@ -37,19 +39,12 @@ function Login() {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div
-      style={{
-        height: "90vh",
-        backgroundImage:
-          'url("https://imgs.search.brave.com/yEDNhsFRrGD7VWxZlcFR8rS8r53426I9si0IQWM4a-0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly83d2Fs/bHBhcGVycy5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzNfUGl6/emEuanBn")',
-        backgroundSize: "cover",
-      }}
-      className="flex justify-center items-center  bg-gray-100 dark:bg-gray-900 dark:text-gray-100"
-    >
-      <div className="container w-full max-w-md">
+    <div className="flex justify-center items-center  bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
+      <Image className="h-full w-full object-cover" src={loginbg} />
+      <div className="absolute container w-full max-w-md">
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-200 dark:bg-gray-800 dark:text-gray-100 border-gradient rounded-lg shadow-gray-500 dark:shadow-black shadow-xl px-8 pt-6 pb-8 mb-4"
+          className="bg-gray-200 dark:bg-gray-800 dark:text-gray-100 border-gradient rounded-lg shadow-gray-800 dark:shadow-black shadow-xl px-8 pt-6 pb-8 mb-4"
         >
           <div className="mb-4">
             <label

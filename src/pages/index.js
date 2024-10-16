@@ -1,17 +1,50 @@
 
 import Card from '@/components/layouts/Home/Card'
+import CardData from "../store/cardData.json"
 import CarouselComponent from '@/components/layouts/Home/Carousel'
-import React from 'react'
+import React, { useEffect } from 'react'
 export default function Home() {
+  let categaries = new Set();
+  const foodData = [];
+  const handleData = () => {
+    CardData.map((data) => {
+      return foodData.push(data), categaries.add(data.category)
+    })
+
+  };
+  useEffect(() => {
+    handleData();
+  }, [])
+  const categoryArray = [...categaries]
   return (
-    <div className='w-screen h-screen bg-gray-100 dark:bg-gray-900 dark:text-gray-100 text-black'>
-      <CarouselComponent></CarouselComponent>
-      <Card></Card>
-    </div>
+    <>
+      <div className='w-auto h-auto bg-gray-100 dark:bg-gray-950 dark:text-gray-100 text-black'>
+        <CarouselComponent></CarouselComponent>
+        {categoryArray.map((category) => {
+          return <>
+            <div
+              key={category}
+              className=" text-4xl mt-10 mb-3 uppercase font-bold"
+            >
+              {category}
+            </div>
+            <hr />
+            <div className="flex flex-col items-center justify-center">
+              <div className=" grid mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+              </div>
+            </div>
+
+          </>
+        })}
+        <Card></Card>
+      </div>
+    </>
   )
 }
 
 // export default function Home() {
+//      <div className='w-auto h-auto bg-gray-100 dark:bg-gray-950 dark:text-gray-100 text-black'>
+
 //   return (
 //     <div
 //       className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}

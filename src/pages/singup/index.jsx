@@ -1,5 +1,7 @@
 // this file is for singup
 import React, { useState } from "react";
+import loginbg from "../../Assets/4490229.jpg";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Singup() {
@@ -18,19 +20,12 @@ export default function Singup() {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div
-      style={{
-        height: "90vh",
-        backgroundImage:
-          'url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
-        backgroundSize: "cover",
-      }}
-      className="flex justify-center items-center bg-gray-100 dark:bg-gray-900 dark:text-gray-100"
-    >
-      <div className="container w-full max-w-md mt-[8rem]">
+    <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
+      <Image className="h-full w-full object-cover" src={loginbg} />
+      <div className="absolute container w-full max-w-md mt-[6rem]">
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-200 dark:bg-gray-800 dark:text-gray-100 border-gradient rounded-lg shadow-gray-500 dark:shadow-black shadow-xl px-8 pt-6 pb-8 mb-4"
+          className="bg-gray-200 dark:bg-gray-800 dark:text-gray-100 border-gradient rounded-lg shadow-gray-900 dark:shadow-black shadow-xl px-8 pt-6 pb-8 mb-4"
         >
           <div className="mb-4">
             <label
